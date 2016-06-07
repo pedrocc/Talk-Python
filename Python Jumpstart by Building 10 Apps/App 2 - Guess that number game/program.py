@@ -8,6 +8,7 @@ print('------------------------------------', '\n')
 # Criação do número randomico
 the_number = random.randint(1,100)
 
+name = input('Por favor digite o seu nome: ')
 guess = 101
 
 while guess != the_number:
@@ -17,9 +18,9 @@ while guess != the_number:
     if the_number == guess:
         break
     elif the_number < guess:
-        print('Muito alto, tente novamente.')
+        print('Desculpe {0}, {1} é um valor muito alto, tente novamente.'.format(name, guess))
     elif the_number > guess:
-        print('Muito baixo, tente novamente')
+        print('Desculpe {0}, {1} é um valor muito baixo, tente novamente'.format(name, guess))
 
 
 print('Parabéns, você acertou o número é:', guess)
