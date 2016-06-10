@@ -20,7 +20,7 @@ def run_event_loop():
     while True:
         cmd = input('[L]ist entries, [A}dd an entry, E[x]it: ')
         cmd = cmd.lower().strip()
-        if cmd == 'l':l
+        if cmd == 'l':
             list_entries(journal_data)
         elif cmd == 'a':
             add_entry(journal_data)
