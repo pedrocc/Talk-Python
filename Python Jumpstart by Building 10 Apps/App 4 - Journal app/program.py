@@ -17,21 +17,22 @@ def run_event_loop():
     journal_name = 'default'
     journal_data = journal.load(journal_name)
 
+
     while True:
-        cmd = input('[L]ist entries, [A}dd an entry, E[x]it: ')
+        cmd = input('[L]ist entries, [A]dd an entry, E[x]it: ')
         cmd = cmd.lower().strip()
+
         if cmd == 'l':
             list_entries(journal_data)
         elif cmd == 'a':
             add_entry(journal_data)
-
         elif cmd == 'x':
             print('Done, goodbye.')
-
+            journal.save(journal_name, journal_data)
             break
         else:
-            print('Erro na aplicação, não existe o comento: ', cmd)
-        journal.save(journal_name, journal_data)
+            print('Erro na aplicação, não existe o comando: ', cmd)
+
 
 def list_entries(data):
     data = reversed(data)
@@ -45,6 +46,6 @@ def add_entry(data):
 
 
 
-
+# EXECUÇÃO DA APLICAÇÃO ===============================
 
 main()
